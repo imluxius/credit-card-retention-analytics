@@ -36,6 +36,12 @@ QUERIES = {
 }
 
 
+def canonical_sha256(path: Path) -> str:
+    """Hash CSV content independently of Git's LF/CRLF checkout setting."""
+    content = path.read_bytes().replace(b'\r\n', b'\n').replace(b'\r', b'\n')
+    return hashlib.sha256(content).hexdigest()
+
+
 def read_source(path: Path) -> tuple[list[dict], dict]:
     """Fail on schema drift and invalid records; retain explicit Unknown categories."""
     rows, identifiers = [], set()
@@ -83,8 +89,8 @@ def read_source(path: Path) -> tuple[list[dict], dict]:
         'missing_cells': 0,
         'unknown_categories': {c: sum(r[c] == 'Unknown' for r in rows)
                                for c in ['education_level', 'marital_status', 'income_category']},
-        'source_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
-        'reference_sha256_matches': hashlib.sha256(path.read_bytes()).hexdigest() == SOURCE_SHA256,
+        'source_sha256': canonical_sha256(path),
+        'reference_sha256_matches': canonical_sha256(path) == SOURCE_SHA256,
         'checks': ['schema', 'required values', 'unique customer IDs', 'finite numeric values',
                    'SQLite domain constraints', 'credit balance identity', 'utilization identity'],
     }
