@@ -64,4 +64,4 @@ This is a cross-sectional association analysis. Observation dates and the timing
 - Associations were explored on the full snapshot; no out-of-time validation or causal design.
 - Demographic groups may describe the sample; do not use them as eligibility rules.
 
-Reproduce with `python -m src.pipeline`. Full query outputs are in `reports/*.csv`.
+Reproduce with `python pipeline.py`. Full query outputs are in `reports/*.csv`.

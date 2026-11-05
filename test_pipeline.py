@@ -6,13 +6,13 @@ import sqlite3
 import tempfile
 import unittest
 
-from src.pipeline import ROOT, SOURCE_COLUMNS, read_source, make_connection, query_outputs
+from pipeline import ROOT, SOURCE_COLUMNS, read_source, make_connection, query_outputs
 
 
 class PipelineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.rows, cls.quality = read_source(ROOT / 'data/raw/BankChurners.csv')
+        cls.rows, cls.quality = read_source(ROOT / 'data/BankChurners.csv')
         cls.con = make_connection(cls.rows)
         cls.result = query_outputs(cls.con)
 
@@ -78,7 +78,7 @@ class PipelineTests(unittest.TestCase):
         return path
 
     def source_record(self):
-        with (ROOT / 'data/raw/BankChurners.csv').open() as f:
+        with (ROOT / 'data/BankChurners.csv').open() as f:
             return next(csv.DictReader(f))
 
     def test_duplicate_customer_rejected(self):

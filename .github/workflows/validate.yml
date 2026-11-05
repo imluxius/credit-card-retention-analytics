@@ -13,8 +13,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Check committed evidence before rebuilding
-        run: python -m unittest discover -s tests -v
+        run: python -m unittest test_pipeline.py -v
       - name: Rebuild all artifacts from the pinned dataset
-        run: python -m src.pipeline
+        run: python pipeline.py
       - name: Verify reproducibility of committed artifacts
         run: git diff --exit-code -- reports

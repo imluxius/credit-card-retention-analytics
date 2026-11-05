@@ -1,6 +1,6 @@
 """Validate a Kaggle snapshot, load SQLite, run SQL, and export evidence.
 
-Run from any directory: python -m src.pipeline (from the repository root).
+Run from any directory: python pipeline.py (from the repository root).
 All metrics are calculated from source rows; no hand-entered headline results.
 """
 from __future__ import annotations
@@ -13,7 +13,7 @@ import math
 import sqlite3
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 SOURCE_URL = 'https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers'
 SOURCE_SHA256 = 'c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779'
 SOURCE_COLUMNS = [
@@ -184,17 +184,17 @@ def render_report(result: dict, quality: dict) -> str:
                   '- No named bank or verified real-world provenance. Do not generalize to Vietnamese banks.',
                   '- Associations were explored on the full snapshot; no out-of-time validation or causal design.',
                   '- Demographic groups may describe the sample; do not use them as eligibility rules.', '',
-                  'Reproduce with `python -m src.pipeline`. Full query outputs are in `reports/*.csv`.'])
+                  'Reproduce with `python pipeline.py`. Full query outputs are in `reports/*.csv`.'])
     return '\n'.join(lines) + '\n'
 
 
 def run(source: Path, output: Path) -> dict:
     rows, quality = read_source(source)
     output.mkdir(parents=True, exist_ok=True)
-    processed = ROOT / 'data/processed'
-    processed.mkdir(parents=True, exist_ok=True)
+    data_dir = ROOT / 'data'
+    data_dir.mkdir(parents=True, exist_ok=True)
     # Rebuild into a temporary file; preserve a successful prior build on validation failure.
-    temporary = processed / 'retention.build.sqlite'
+    temporary = data_dir / 'retention.build.sqlite'
     temporary.unlink(missing_ok=True)
     con = make_connection(rows, temporary)
     try:
@@ -208,7 +208,7 @@ def run(source: Path, output: Path) -> dict:
                 raise ValueError('Segment attrition reconciliation failed')
     finally:
         con.close()
-    temporary.replace(processed / 'retention.sqlite')
+    temporary.replace(data_dir / 'retention.sqlite')
     for key in ['segments', 'behavior', 'cohorts']:
         write_csv(output / f'{key}.csv', result[key])
     (output / 'quality.json').write_text(json.dumps(quality, indent=2) + '\n')
@@ -219,12 +219,12 @@ def run(source: Path, output: Path) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, default=ROOT / 'data/raw/BankChurners.csv')
+    parser.add_argument('--source', type=Path, default=ROOT / 'data/BankChurners.csv')
     parser.add_argument('--output', type=Path, default=ROOT / 'reports')
     args = parser.parse_args()
     result = run(args.source, args.output)
     print(json.dumps(result['overview'], indent=2))
-    print('Built reports/ and data/processed/retention.sqlite')
+    print('Built reports/ and data/retention.sqlite')
 
 
 if __name__ == '__main__':
