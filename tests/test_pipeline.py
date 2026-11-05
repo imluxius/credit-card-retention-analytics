@@ -48,14 +48,10 @@ class PipelineTests(unittest.TestCase):
                      if r['dimension'] == 'income_category' and r['segment'] == 'Unknown')
         self.assertEqual(group['customers'], 1112)
 
-    def test_model_outputs_excluded_and_dashboard_has_no_ids(self):
+    def test_model_outputs_excluded(self):
         columns = [r[1] for r in self.con.execute('PRAGMA table_info(customer_snapshot)')]
         self.assertEqual(len(columns), 21)
         self.assertFalse(any('naive' in c.lower() for c in columns))
-        exported = self.result['dashboard_rows'][0]
-        self.assertNotIn('customer_id', exported)
-        self.assertNotIn('gender', exported)
-        self.assertEqual(sum(r['churned'] for r in self.result['dashboard_rows']), 1627)
 
     def test_small_sample_flag(self):
         platinum = next(r for r in self.result['segments']
@@ -137,7 +133,7 @@ class PipelineTests(unittest.TestCase):
 
     def test_generated_metrics_match_current_queries(self):
         saved = json.loads((ROOT / 'reports/metrics.json').read_text())
-        self.assertEqual(saved, {k: v for k, v in self.result.items() if k != 'dashboard_rows'})
+        self.assertEqual(saved, self.result)
 
 
 if __name__ == '__main__':

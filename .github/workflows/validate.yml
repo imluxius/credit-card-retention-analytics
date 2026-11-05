@@ -17,4 +17,4 @@ jobs:
       - name: Rebuild all artifacts from the pinned dataset
         run: python -m src.pipeline
       - name: Verify reproducibility of committed artifacts
-        run: git diff --exit-code -- reports dashboard/index.html
+        run: git diff --exit-code -- reports

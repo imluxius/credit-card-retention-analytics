@@ -111,13 +111,6 @@ def query_outputs(con: sqlite3.Connection) -> dict:
     result = {key: [dict(r) for r in con.execute((ROOT / 'sql' / name).read_text())]
               for key, name in QUERIES.items()}
     result['overview'] = result['overview'][0]
-    # Export only aggregate charts + anonymous behavior/filter attributes.
-    result['dashboard_rows'] = [dict(r) for r in con.execute('''
-        SELECT churned, card_category, income_category, total_trans_ct,
-               total_trans_amt, months_inactive_12_mon, contacts_count_12_mon,
-               avg_utilization_ratio, total_relationship_count
-        FROM customer_features ORDER BY customer_id
-    ''')]
     return result
 
 
@@ -213,11 +206,8 @@ def run(source: Path, output: Path) -> dict:
     for key in ['segments', 'behavior', 'cohorts']:
         write_csv(output / f'{key}.csv', result[key])
     (output / 'quality.json').write_text(json.dumps(quality, indent=2) + '\n')
-    public = {k: v for k, v in result.items() if k != 'dashboard_rows'}
-    (output / 'metrics.json').write_text(json.dumps(public, indent=2) + '\n')
+    (output / 'metrics.json').write_text(json.dumps(result, indent=2) + '\n')
     (output / 'analysis.md').write_text(render_report(result, quality), encoding='utf-8')
-    from src.dashboard import build_dashboard
-    build_dashboard(result, ROOT / 'dashboard/index.html')
     return result
 
 
@@ -228,7 +218,7 @@ def main() -> None:
     args = parser.parse_args()
     result = run(args.source, args.output)
     print(json.dumps(result['overview'], indent=2))
-    print('Built reports/, data/processed/retention.sqlite and dashboard/index.html')
+    print('Built reports/ and data/processed/retention.sqlite')
 
 
 if __name__ == '__main__':
