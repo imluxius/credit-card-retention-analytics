@@ -123,7 +123,7 @@ def query_outputs(con: sqlite3.Connection) -> dict:
 
 def write_csv(path: Path, rows: list[dict]) -> None:
     with path.open('w', encoding='utf-8', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
 
