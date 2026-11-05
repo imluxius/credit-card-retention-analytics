@@ -1,0 +1,11 @@
+{
+  "name": "cardscope-browser-checks",
+  "private": true,
+  "description": "Optional browser verification; the dashboard itself has no npm dependencies",
+  "scripts": {
+    "test:browser": "node tests/browser-check.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

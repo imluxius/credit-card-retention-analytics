@@ -1,0 +1,315 @@
+{
+  "overview": {
+    "customers": 10127,
+    "churned": 1627,
+    "retained": 8500,
+    "churn_rate": 0.1606596227905599,
+    "avg_transactions": 64.85869457884863,
+    "avg_transaction_amount": 4404.086303939963,
+    "avg_utilization": 0.2748935518909845
+  },
+  "segments": [
+    {
+      "dimension": "card_category",
+      "segment": "Platinum",
+      "customers": 20,
+      "churned": 5,
+      "churn_rate": 0.25,
+      "share_of_churn": 0.003073140749846343,
+      "difference_from_overall": 0.0893403772094401,
+      "sample_note": "Small sample (<100)"
+    },
+    {
+      "dimension": "card_category",
+      "segment": "Gold",
+      "customers": 116,
+      "churned": 21,
+      "churn_rate": 0.1810344827586207,
+      "share_of_churn": 0.01290719114935464,
+      "difference_from_overall": 0.020374859968060793,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "card_category",
+      "segment": "Blue",
+      "customers": 9436,
+      "churned": 1519,
+      "churn_rate": 0.1609792284866469,
+      "share_of_churn": 0.933620159803319,
+      "difference_from_overall": 0.0003196056960869942,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "card_category",
+      "segment": "Silver",
+      "customers": 555,
+      "churned": 82,
+      "churn_rate": 0.14774774774774774,
+      "share_of_churn": 0.05039950829748002,
+      "difference_from_overall": -0.01291187504281216,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "contact_band",
+      "segment": "4+",
+      "customers": 1622,
+      "churned": 428,
+      "churn_rate": 0.2638717632552404,
+      "share_of_churn": 0.26306084818684694,
+      "difference_from_overall": 0.10321214046468052,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "contact_band",
+      "segment": "3",
+      "customers": 3380,
+      "churned": 681,
+      "churn_rate": 0.2014792899408284,
+      "share_of_churn": 0.4185617701290719,
+      "difference_from_overall": 0.040819667150268496,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "contact_band",
+      "segment": "2",
+      "customers": 3227,
+      "churned": 403,
+      "churn_rate": 0.12488379299659126,
+      "share_of_churn": 0.24769514443761526,
+      "difference_from_overall": -0.035775829793968636,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "contact_band",
+      "segment": "0-1",
+      "customers": 1898,
+      "churned": 115,
+      "churn_rate": 0.06059009483667018,
+      "share_of_churn": 0.07068223724646588,
+      "difference_from_overall": -0.10006952795388971,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "inactivity_band",
+      "segment": "4+",
+      "customers": 737,
+      "churned": 181,
+      "churn_rate": 0.24559023066485752,
+      "share_of_churn": 0.11124769514443761,
+      "difference_from_overall": 0.08493060787429763,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "inactivity_band",
+      "segment": "3",
+      "customers": 3846,
+      "churned": 826,
+      "churn_rate": 0.21476859074362975,
+      "share_of_churn": 0.5076828518746158,
+      "difference_from_overall": 0.05410896795306985,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "inactivity_band",
+      "segment": "2",
+      "customers": 3282,
+      "churned": 505,
+      "churn_rate": 0.1538695917123705,
+      "share_of_churn": 0.31038721573448064,
+      "difference_from_overall": -0.006790031078189401,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "inactivity_band",
+      "segment": "0-1",
+      "customers": 2262,
+      "churned": 115,
+      "churn_rate": 0.05083996463306808,
+      "share_of_churn": 0.07068223724646588,
+      "difference_from_overall": -0.10981965815749181,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "income_category",
+      "segment": "$120K +",
+      "customers": 727,
+      "churned": 126,
+      "churn_rate": 0.1733149931224209,
+      "share_of_churn": 0.07744314689612784,
+      "difference_from_overall": 0.01265537033186101,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "income_category",
+      "segment": "Less than $40K",
+      "customers": 3561,
+      "churned": 612,
+      "churn_rate": 0.17186183656276327,
+      "share_of_churn": 0.3761524277811924,
+      "difference_from_overall": 0.011202213772203373,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "income_category",
+      "segment": "Unknown",
+      "customers": 1112,
+      "churned": 187,
+      "churn_rate": 0.1681654676258993,
+      "share_of_churn": 0.11493546404425323,
+      "difference_from_overall": 0.0075058448353393925,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "income_category",
+      "segment": "$80K - $120K",
+      "customers": 1535,
+      "churned": 242,
+      "churn_rate": 0.15765472312703582,
+      "share_of_churn": 0.148740012292563,
+      "difference_from_overall": -0.0030048996635240743,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "income_category",
+      "segment": "$40K - $60K",
+      "customers": 1790,
+      "churned": 271,
+      "churn_rate": 0.15139664804469274,
+      "share_of_churn": 0.16656422864167178,
+      "difference_from_overall": -0.009262974745867153,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "income_category",
+      "segment": "$60K - $80K",
+      "customers": 1402,
+      "churned": 189,
+      "churn_rate": 0.13480741797432239,
+      "share_of_churn": 0.11616472034419176,
+      "difference_from_overall": -0.025852204816237512,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "transaction_band",
+      "segment": "40-59",
+      "customers": 2134,
+      "churned": 835,
+      "churn_rate": 0.39128397375820057,
+      "share_of_churn": 0.5132145052243393,
+      "difference_from_overall": 0.23062435096764067,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "transaction_band",
+      "segment": "<40",
+      "customers": 1802,
+      "churned": 542,
+      "churn_rate": 0.30077691453940064,
+      "share_of_churn": 0.33312845728334356,
+      "difference_from_overall": 0.14011729174884074,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "transaction_band",
+      "segment": "60-79",
+      "customers": 3468,
+      "churned": 214,
+      "churn_rate": 0.06170703575547866,
+      "share_of_churn": 0.13153042409342347,
+      "difference_from_overall": -0.09895258703508124,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "transaction_band",
+      "segment": "80+",
+      "customers": 2723,
+      "churned": 36,
+      "churn_rate": 0.013220712449504223,
+      "share_of_churn": 0.022126613398893668,
+      "difference_from_overall": -0.14743891034105566,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "utilization_band",
+      "segment": "Zero",
+      "customers": 2470,
+      "churned": 893,
+      "churn_rate": 0.36153846153846153,
+      "share_of_churn": 0.5488629379225568,
+      "difference_from_overall": 0.20087883874790163,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "utilization_band",
+      "segment": "(0, 0.3)",
+      "customers": 3776,
+      "churned": 385,
+      "churn_rate": 0.10195974576271187,
+      "share_of_churn": 0.2366318377381684,
+      "difference_from_overall": -0.05869987702784803,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "utilization_band",
+      "segment": "[0.6, 1]",
+      "customers": 1815,
+      "churned": 182,
+      "churn_rate": 0.10027548209366391,
+      "share_of_churn": 0.11186232329440689,
+      "difference_from_overall": -0.06038414069689599,
+      "sample_note": "Descriptive only"
+    },
+    {
+      "dimension": "utilization_band",
+      "segment": "[0.3, 0.6)",
+      "customers": 2066,
+      "churned": 167,
+      "churn_rate": 0.0808325266214908,
+      "share_of_churn": 0.10264290104486785,
+      "difference_from_overall": -0.07982709616906909,
+      "sample_note": "Descriptive only"
+    }
+  ],
+  "behavior": [
+    {
+      "attrition_flag": "Attrited Customer",
+      "customers": 1627,
+      "avg_transactions": 44.93362015980332,
+      "avg_transaction_amount": 3095.025814382299,
+      "avg_inactive_months": 2.693300553165335,
+      "avg_contacts": 2.972341733251383,
+      "avg_utilization": 0.16247510755992622,
+      "avg_relationships": 3.279655808236017
+    },
+    {
+      "attrition_flag": "Existing Customer",
+      "customers": 8500,
+      "avg_transactions": 68.67258823529411,
+      "avg_transaction_amount": 4654.655882352941,
+      "avg_inactive_months": 2.273764705882353,
+      "avg_contacts": 2.3563529411764708,
+      "avg_utilization": 0.2964117647058824,
+      "avg_relationships": 3.9145882352941177
+    }
+  ],
+  "cohorts": [
+    {
+      "cohort": "Investigate: low activity + inactivity",
+      "customers": 1903,
+      "churned": 848,
+      "existing_customers": 1055,
+      "churn_rate": 0.44561219127693114,
+      "share_of_churn": 0.5212046711739398,
+      "share_of_customers": 0.18791349856818407
+    },
+    {
+      "cohort": "Other customers",
+      "customers": 8224,
+      "churned": 779,
+      "existing_customers": 7445,
+      "churn_rate": 0.0947227626459144,
+      "share_of_churn": 0.47879532882606024,
+      "share_of_customers": 0.8120865014318159
+    }
+  ]
+}

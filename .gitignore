@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+data/processed/
+artifacts/
+.DS_Store
+node_modules/

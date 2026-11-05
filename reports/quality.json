@@ -1,0 +1,27 @@
+{
+  "rows": 10127,
+  "source_columns": 23,
+  "retained_columns": 21,
+  "excluded_model_columns": [
+    "Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_1",
+    "Naive_Bayes_Classifier_Attrition_Flag_Card_Category_Contacts_Count_12_mon_Dependent_count_Education_Level_Months_Inactive_12_mon_2"
+  ],
+  "duplicate_customer_ids": 0,
+  "missing_cells": 0,
+  "unknown_categories": {
+    "education_level": 1519,
+    "marital_status": 749,
+    "income_category": 1112
+  },
+  "source_sha256": "c91b525a2a6755a1b0b80dad1d0d008ca97ec4df34552c8f47ffa12b6184b779",
+  "reference_sha256_matches": true,
+  "checks": [
+    "schema",
+    "required values",
+    "unique customer IDs",
+    "finite numeric values",
+    "SQLite domain constraints",
+    "credit balance identity",
+    "utilization identity"
+  ]
+}

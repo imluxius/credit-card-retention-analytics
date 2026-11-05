@@ -1,0 +1,20 @@
+name: Validate analysis
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check committed evidence before rebuilding
+        run: python -m unittest discover -s tests -v
+      - name: Rebuild all artifacts from the pinned dataset
+        run: python -m src.pipeline
+      - name: Verify reproducibility of committed artifacts
+        run: git diff --exit-code -- reports dashboard/index.html

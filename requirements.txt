@@ -1,0 +1,2 @@
+# Core pipeline, dashboard generator, and tests use Python 3.11+ standard library only.
+# Optional: pip install jupyterlab to open notebooks/01_exploration.ipynb.
