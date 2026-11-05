@@ -6,11 +6,15 @@ A DA/BA portfolio case study: **understand how customer engagement is associated
 
 ![Interactive dashboard preview](reports/dashboard-preview.png)
 
-## Explore the project
+## Explore the business case
+
+- **Business case narrative (Vietnamese):** [`docs/portfolio-story.vi.md`](docs/portfolio-story.vi.md). It explains the business problem, decisions, evidence, limits and how to present the project in an interview.
+- **Business analysis package:** [`docs/business-analysis.md`](docs/business-analysis.md) with scope, stakeholders, process flows, functional requirements, user stories and acceptance criteria.
+- **Findings and recommendations:** [`reports/analysis.md`](reports/analysis.md).
+
+## Explore the implementation
 
 - **Interactive dashboard:** download the repository and open [`dashboard/index.html`](dashboard/index.html) in a modern browser. It works offline, includes card/income filters and aggregate CSV export. GitHub's file viewer shows HTML source; it does not run the dashboard.
-- **Findings and recommendations:** [`reports/analysis.md`](reports/analysis.md).
-- **BA requirements and user stories:** [`docs/business-analysis.md`](docs/business-analysis.md).
 - **SQL analysis:** [`sql/`](sql/).
 - **Guided notebook:** [`notebooks/01_exploration.ipynb`](notebooks/01_exploration.ipynb).
 - **Hướng dẫn học và trình bày bằng tiếng Việt:** [`docs/learning-guide.vi.md`](docs/learning-guide.vi.md).
@@ -97,6 +101,8 @@ scripts/               Checksum-verified downloader
 ## Scope and attribution
 
 Dataset: [Credit Card Customers, Sakshi Goyal on Kaggle](https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers), listed as CC0. The uploader attributes it to Analyttica; the underlying bank and real-world provenance are unverified. Results must not be generalized to Vietnamese banking customers.
+
+The primary work in this portfolio is the business analysis and reproducible Python/SQL evidence. The offline HTML dashboard is a generated presentation artifact and is marked as such in `.gitattributes`; it should not be mistaken for the whole project.
 
 This portfolio was built with AI assistance. It is an educational case study, not bank employment or a completed production engagement. BA stakeholders and processes are explicit assumptions. Before presenting it as personal work, reproduce it and be ready to explain the implementation, findings and limits.
 

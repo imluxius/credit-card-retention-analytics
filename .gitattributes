@@ -1,0 +1,7 @@
+# The offline dashboard is a generated presentation artifact, not the core
+# implementation. Keep GitHub's language breakdown focused on Python and SQL.
+dashboard/*.html linguist-generated=true
+reports/*.csv linguist-detectable=false
+data/raw/*.csv linguist-detectable=false
+*.ipynb linguist-generated=true
+reports/*.png binary linguist-detectable=false
